@@ -8,6 +8,7 @@ public class Main {
 public static Scanner x;
 public static Scanner scan = new Scanner(System.in);
 public static List<String> scannedLexicon = new ArrayList<>();
+	
 	public static void main(String[] args)
   	{
 		try
@@ -20,21 +21,21 @@ public static List<String> scannedLexicon = new ArrayList<>();
 		}
 		while(x.hasNext())
 		{
-		scannedLexicon.add(x.next());
+			scannedLexicon.add(x.next());
 		}
 		x.close();
-		
 		SpellChecker sc = new SpellChecker(scannedLexicon);
 		while(true)
 		{
-		out.println("Enter a word to find suggested words");
-		String str1 = scan.next();
-		List<String> suggestedWords = new ArrayList<>();
-		suggestedWords = sc.suggestWords(str1, str1.length());
-		for(String word: suggestedWords)
-		{
-			out.println(word);
-		}
+			out.println("Enter a word to find suggested words");
+			String str1 = scan.next();
+			List<String> suggestedWords = new ArrayList<>();
+			suggestedWords = sc.suggestWords(str1, str1.length());
+			
+			for(String word: suggestedWords)
+			{
+				out.println(word);
+			}
 		}
 		
   	}
